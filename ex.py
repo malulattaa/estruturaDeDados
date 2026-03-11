@@ -5,7 +5,7 @@ remove(value) — remover um elemento da lista
 search(value) — buscar um elemento na lista - OK
 print_list() — imprimir os elementos da lista
 size() — retornar o tamanho da lista - OK
-is_empty() — verificar se a lista está vazia 
+is_empty() — verificar se a lista está vazia - OK
 """
 
 class Node:
@@ -25,16 +25,20 @@ class LinkedList:
         self.size += 1
         
     def insert_end(self, value):
-        if self.head:
+        if self.is_empty():
+            self.head = Node(value)
+        else:
             pointer = self.head
             while(pointer.next):
                 pointer = pointer.next
             pointer.next = Node(value)
-            
-        else:
-            self.head = Node(value)
-        self.size = self.size + 1
+        self.size += 1
         
+    # def remove(self, value):
+        
+    def is_empty(self):
+        return self.size == 0
+
     def search(self, value):
         pointer = self.head
         i = 0
@@ -48,6 +52,7 @@ class LinkedList:
 
     def size(self):
         return self.size
+    
     
 lista = LinkedList()
 lista.insert_end(7)
