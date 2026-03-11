@@ -53,7 +53,14 @@ class LinkedList:
     def size(self):
         return self.size
     
-    
+    def print_list(self):
+        pointer = self.head
+
+        while (pointer):
+            print(pointer.value, end = " -> ")
+            pointer = pointer.next
+        print("None")
+            
 lista = LinkedList()
 lista.insert_end(7)
 lista.size
