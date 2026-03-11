@@ -35,9 +35,6 @@ class LinkedList:
             self.head = Node(value)
         self.size = self.size + 1
         
-    def __len__(self):
-        return self.size
-    
     def search(self, value):
         pointer = self.head
         i = 0
@@ -51,7 +48,8 @@ class LinkedList:
 
     def size(self):
         return self.size
+    
 lista = LinkedList()
 lista.insert_end(7)
-len(lista)
+lista.size
 
