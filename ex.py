@@ -61,8 +61,24 @@ class LinkedList:
             pointer = pointer.next
         print("None")
         
-    def remove():
-        
+    def remove(self, value):
+        if self.head == None:
+            raise ValueError("A lista está vazia")
+        elif self.head.value == value:
+            self.head = self.head.next
+            self._size -= 1
+        else:
+            aux = self.head
+            pointer = self.head.next
+            while(pointer):
+                if pointer.value == value:
+                    aux.next = pointer.next
+                    pointer.next = None
+                else:
+                    aux = pointer
+                    pointer = pointer.next
+            return True
+        raise ValueError("Valor não encontrado")
             
 lista = LinkedList()
 
