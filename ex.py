@@ -64,8 +64,8 @@ class LinkedList:
                 return i
             pointer = pointer.next
             i = i + 1
-        #return None
-        raise ValueError ("O elemento não está na lista")
+        return None
+        #raise ValueError ("O elemento não está na lista")
     
     def print_list(self):
         pointer = self.head
