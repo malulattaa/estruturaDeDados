@@ -34,33 +34,6 @@ class LinkedList:
             pointer.next = Node(value)
         self._size += 1
         
-    # def remove(self, value):
-        
-    def is_empty(self):
-        return self._size == 0
-
-    def search(self, value):
-        pointer = self.head
-        i = 0
-        while (pointer):
-            if pointer.value == value:
-                return i
-            pointer = pointer.next
-            i = i + 1
-        return None
-    # ou raise ValueError ("O elemento não está na lista")
-
-    def size(self):
-        return self._size
-    
-    def print_list(self):
-        pointer = self.head
-
-        while (pointer):
-            print(pointer.value, end = " -> ")
-            pointer = pointer.next
-        print("None")
-        
     def remove(self, value):
         if self.head == None:
             raise ValueError("A lista está vazia")
@@ -82,7 +55,32 @@ class LinkedList:
                 aux = pointer
                 pointer = pointer.next
             raise ValueError("Valor não encontrado")
-            
+        
+    def search(self, value):
+        pointer = self.head
+        i = 0
+        while (pointer):
+            if pointer.value == value:
+                return i
+            pointer = pointer.next
+            i = i + 1
+        #return None
+        raise ValueError ("O elemento não está na lista")
+    
+    def print_list(self):
+        pointer = self.head
+
+        while (pointer):
+            print(pointer.value, end = " -> ")
+            pointer = pointer.next
+        print("None")
+        
+    def size(self):
+        return self._size
+    
+    def is_empty(self):
+        return self._size == 0
+
 lista = LinkedList()
 
 print("A lista está vazia?")
